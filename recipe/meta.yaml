@@ -14,7 +14,7 @@ source:
     - 0003-Use-C-std-complex-type-for-portability.patch
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage('gnuradio-iqbalance', max_pin='x.x') }}
   ignore_run_exports_from:
@@ -25,6 +25,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - ninja
