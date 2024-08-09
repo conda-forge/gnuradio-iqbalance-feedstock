@@ -6,15 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://gitea.osmocom.org/sdr/gr-iqbal/archive/v{{ version }}.tar.gz
-  sha256: f06d24143a8b2015494c8a02ba27eb5cdcbdc2495e73435df9ca0b6c2e0ba944
+  # osmocom git is slow/offline
+  #url: https://gitea.osmocom.org/sdr/gr-iqbal/archive/v{{ version }}.tar.gz
+  #sha256: f06d24143a8b2015494c8a02ba27eb5cdcbdc2495e73435df9ca0b6c2e0ba944
+  url: https://github.com/osmocom/gr-iqbal/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: bd79ae3484f1b386f618f48e9f8e304eb3931916051eb7a7bb4b14b99fed5110
   patches:
     - 0001-Update-for-GNU-Radio-3.9-3.10-compatibility.patch
     - 0002-Use-GNU-Radio-Python-binding-macros.patch
     - 0003-Use-C-std-complex-type-for-portability.patch
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage('gnuradio-iqbalance', max_pin='x.x') }}
   ignore_run_exports_from:
