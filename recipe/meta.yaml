@@ -1,5 +1,5 @@
 {% set name = "gnuradio-iqbalance" %}
-{% set version = "0.38.2" %}
+{% set version = "0.38.3" %}
 
 package:
   name: {{ name }}
@@ -10,14 +10,14 @@ source:
   #url: https://gitea.osmocom.org/sdr/gr-iqbal/archive/v{{ version }}.tar.gz
   #sha256: f06d24143a8b2015494c8a02ba27eb5cdcbdc2495e73435df9ca0b6c2e0ba944
   url: https://github.com/osmocom/gr-iqbal/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: bd79ae3484f1b386f618f48e9f8e304eb3931916051eb7a7bb4b14b99fed5110
+  sha256: dc1a25ec95c15335135776887e4a3127fb583123ff2b092b5113965bd099c53e
   patches:
     - 0001-Update-for-GNU-Radio-3.9-3.10-compatibility.patch
     - 0002-Use-GNU-Radio-Python-binding-macros.patch
     - 0003-Use-C-std-complex-type-for-portability.patch
 
 build:
-  number: 8
+  number: 0
   run_exports:
     - {{ pin_subpackage('gnuradio-iqbalance', max_pin='x.x') }}
   ignore_run_exports_from:
@@ -87,9 +87,9 @@ about:
     GNU Radio module to correct I/Q imbalance in quadrature receivers.
 
     It's composed of two main blocks:
-    - *fix* : Given a phase and amplitude error, it will correct a complex signal
-    - *optimize*: Attempts to auto-detect the phase and amplitude error to feed to
-    the fix block above
+
+      - *fix* : Given a phase and amplitude error, it will correct a complex signal
+      - *optimize*: Attempts to auto-detect the phase and amplitude error to feed to the fix block above
 
 extra:
   recipe-maintainers:
