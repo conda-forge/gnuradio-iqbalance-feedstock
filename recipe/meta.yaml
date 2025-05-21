@@ -12,9 +12,8 @@ source:
   url: https://github.com/osmocom/gr-iqbal/archive/refs/tags/v{{ version }}.tar.gz
   sha256: dc1a25ec95c15335135776887e4a3127fb583123ff2b092b5113965bd099c53e
   patches:
-    - 0001-Update-for-GNU-Radio-3.9-3.10-compatibility.patch
-    - 0002-Use-GNU-Radio-Python-binding-macros.patch
-    - 0003-Use-C-std-complex-type-for-portability.patch
+    - 0001-Use-GNU-Radio-Python-binding-macros.patch
+    - 0002-Use-C-std-complex-type-for-portability.patch
 
 build:
   number: 0
