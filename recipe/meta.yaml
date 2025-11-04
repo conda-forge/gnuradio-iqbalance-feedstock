@@ -16,7 +16,7 @@ source:
     - 0002-Use-C-std-complex-type-for-portability.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('gnuradio-iqbalance', max_pin='x.x') }}
   ignore_run_exports_from:
